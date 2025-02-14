@@ -1,12 +1,4 @@
-using System.Net;
-using System.Net.Sockets;
-using System.Net.NetworkInformation;
-using System.Net.Http;
-using System.Text;
-using System.Runtime.CompilerServices;
-using System.Windows.Forms;
 using Controles;
-using static System.Net.Mime.MediaTypeNames;
 
 namespace Interface
 {
@@ -16,7 +8,8 @@ namespace Interface
         private loading_interface loadingForm = new loading_interface();
         private servidor_ip ipForm;
         public string serverIp;
-        arena_interface gameForm;
+        private arena_interface gameForm;
+
         public telaInicial_interface()
         {
             InitializeComponent();
@@ -32,9 +25,9 @@ namespace Interface
 
         private void join_btn_Click(object sender, EventArgs e)
         {
-            cliente.DiscoverServer();
-            this.Hide();
-            loadingForm.Show();
+            //cliente.DiscoverServer();
+            //this.Hide();
+            //loadingForm.Show();
         }
 
         private void HandleServerMessage(string message)

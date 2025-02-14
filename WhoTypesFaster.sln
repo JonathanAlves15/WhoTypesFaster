@@ -1,13 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.12.35707.178 d17.12
+VisualStudioVersion = 17.12.35707.178
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Interface", "Interface\Interface.csproj", "{5781FD56-29C4-466D-851E-498F701AB4D1}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Controles", "Controles\Controles.csproj", "{B6A300C6-E8E0-4051-A068-7B83928B0C8E}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Modelos", "Modelos\Modelos.csproj", "{DC69056C-1C09-405F-98B0-74AC106C9FDE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +21,6 @@ Global
 		{B6A300C6-E8E0-4051-A068-7B83928B0C8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B6A300C6-E8E0-4051-A068-7B83928B0C8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B6A300C6-E8E0-4051-A068-7B83928B0C8E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{DC69056C-1C09-405F-98B0-74AC106C9FDE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DC69056C-1C09-405F-98B0-74AC106C9FDE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DC69056C-1C09-405F-98B0-74AC106C9FDE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DC69056C-1C09-405F-98B0-74AC106C9FDE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
