@@ -16,7 +16,7 @@ namespace Interface
             this.cliente = client;
             this.TextToWriteLbl.Text = text;
         }
-        
+
         private void arena_interface_FormClosing(object sender, FormClosingEventArgs e)
         {
             this.cliente.Desconectar();
@@ -25,7 +25,8 @@ namespace Interface
 
         private void arena_interface_Load(object sender, EventArgs e)
         {
-
+            this.Enabled = false;
+            CountDown.Start();
         }
 
         private void PlayerOneRtb_TextChanged(object sender, EventArgs e)
@@ -66,12 +67,24 @@ namespace Interface
 
         private void RageQuitBtn_Click(object sender, EventArgs e)
         {
-            this.Close();
         }
 
         private void EnviarBtn_Click(object sender, EventArgs e)
         {
-            
+
+        }
+
+        int timer = 1;
+        private void CountDown_Tick(object sender, EventArgs e)
+        {
+            this.TimerLbl.Text = (3 - timer).ToString();
+            if (timer == 3)
+            {
+                this.Enabled = true;
+                this.TimerLbl.Visible = false;
+                CountDown.Dispose();
+            }
+            timer++;
         }
     }
 }

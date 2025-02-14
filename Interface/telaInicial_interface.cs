@@ -5,29 +5,17 @@ namespace Interface
     public partial class telaInicial_interface : Form
     {
         private Client cliente;
-        private loading_interface loadingForm = new loading_interface();
         private servidor_ip ipForm;
         public string serverIp;
         private arena_interface gameForm;
+        private loading_interface loadingForm;
 
         public telaInicial_interface()
         {
             InitializeComponent();
             this.ipForm = new servidor_ip(this);
-            cliente = new Client();
-            cliente.OnMessageReceived += HandleServerMessage;
-        }
-
-        private void host_btn_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void join_btn_Click(object sender, EventArgs e)
-        {
-            //cliente.DiscoverServer();
-            //this.Hide();
-            //loadingForm.Show();
+            this.cliente = new Client();
+            this.cliente.OnMessageReceived += HandleServerMessage;
         }
 
         private void HandleServerMessage(string message)
@@ -44,30 +32,41 @@ namespace Interface
             else if (message == "WIN")
             {
                 MessageBox.Show("Você venceu :)");
-                gameForm.Close();
+                this.gameForm.Close();
             }
 
             else if (message == "LOSE")
             {
                 MessageBox.Show("Você perdeu :(");
-                gameForm.Close();
+                this.gameForm.Close();
+            }
+
+            else if (message == "OPPONENT_DISCONNECTED")
+            {
+                MessageBox.Show("O outro jogador desconectou B)");
+                this.gameForm.Close();
             }
         }
 
+
         private void StartGame(string text)
         {
-            gameForm = new arena_interface(text, cliente, this);
-            loadingForm.Hide();
+            this.gameForm = new arena_interface(text, cliente, this);
+            this.loadingForm.Hide();
             this.Hide();
-            gameForm.Show();
+            this.gameForm.Show();
         }
 
         private void JoinByIp_Click(object sender, EventArgs e)
         {
-            ipForm.ShowDialog();
-            cliente.Connect(serverIp, 5000);
-            this.Hide();
-            loadingForm.Show();
+            this.ipForm.ShowDialog();
+            if (this.serverIp != null)
+            {
+                this.cliente.Connect(serverIp, 5000);
+                this.Hide();
+                this.loadingForm = new loading_interface(this.cliente, this);
+                this.loadingForm.Show();
+            }
         }
     }
 }

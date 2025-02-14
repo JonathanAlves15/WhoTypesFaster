@@ -34,20 +34,25 @@
             // lblLoading
             // 
             lblLoading.AutoSize = true;
-            lblLoading.Location = new Point(109, 21);
+            lblLoading.Location = new Point(123, 20);
             lblLoading.Name = "lblLoading";
-            lblLoading.Size = new Size(185, 20);
+            lblLoading.Size = new Size(203, 19);
             lblLoading.TabIndex = 0;
             lblLoading.Text = "Esperando outro jogador...";
             // 
             // loading_interface
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(9F, 19F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(430, 68);
+            ClientSize = new Size(484, 65);
             Controls.Add(lblLoading);
+            Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "loading_interface";
-            Text = "loading_interface";
+            ShowIcon = false;
+            ShowInTaskbar = false;
+            StartPosition = FormStartPosition.CenterScreen;
+            FormClosing += loading_interface_FormClosing;
             ResumeLayout(false);
             PerformLayout();
         }

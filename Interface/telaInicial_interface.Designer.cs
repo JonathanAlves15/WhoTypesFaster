@@ -30,44 +30,50 @@ namespace Interface
         /// </summary>
         private void InitializeComponent()
         {
-            join_btn = new Button();
             JoinByIp = new Button();
+            Title = new Label();
             SuspendLayout();
-            // 
-            // join_btn
-            // 
-            join_btn.Location = new Point(314, 175);
-            join_btn.Name = "join_btn";
-            join_btn.Size = new Size(158, 29);
-            join_btn.TabIndex = 1;
-            join_btn.Text = "Encontrar servidor";
-            join_btn.UseVisualStyleBackColor = true;
-            join_btn.Click += join_btn_Click;
             // 
             // JoinByIp
             // 
-            JoinByIp.Location = new Point(314, 140);
+            JoinByIp.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            JoinByIp.Location = new Point(129, 87);
             JoinByIp.Name = "JoinByIp";
-            JoinByIp.Size = new Size(158, 29);
+            JoinByIp.Size = new Size(158, 25);
             JoinByIp.TabIndex = 2;
             JoinByIp.Text = "Conectar-se por IP";
             JoinByIp.UseVisualStyleBackColor = true;
             JoinByIp.Click += JoinByIp_Click;
             // 
+            // Title
+            // 
+            Title.AutoSize = true;
+            Title.Font = new Font("Arial", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            Title.Location = new Point(89, 8);
+            Title.Name = "Title";
+            Title.Size = new Size(256, 35);
+            Title.TabIndex = 3;
+            Title.Text = "Who Types Faster";
+            // 
             // telaInicial_interface
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(8F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 398);
+            ClientSize = new Size(432, 124);
+            Controls.Add(Title);
             Controls.Add(JoinByIp);
-            Controls.Add(join_btn);
+            Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "telaInicial_interface";
-            Text = "Tela Inicial";
+            ShowIcon = false;
+            SizeGripStyle = SizeGripStyle.Hide;
+            StartPosition = FormStartPosition.CenterScreen;
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
-        private Button join_btn;
         private Button JoinByIp;
+        private Label Title;
     }
 }

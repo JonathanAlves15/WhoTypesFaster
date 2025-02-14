@@ -28,51 +28,62 @@
         /// </summary>
         private void InitializeComponent()
         {
-            RageQuitBtn = new Button();
+            components = new System.ComponentModel.Container();
             PlayerOneRtb = new RichTextBox();
             TextToWriteLbl = new Label();
+            CountDown = new System.Windows.Forms.Timer(components);
+            TimerLbl = new Label();
             SuspendLayout();
-            // 
-            // RageQuitBtn
-            // 
-            RageQuitBtn.Location = new Point(12, 409);
-            RageQuitBtn.Name = "RageQuitBtn";
-            RageQuitBtn.Size = new Size(94, 29);
-            RageQuitBtn.TabIndex = 0;
-            RageQuitBtn.Text = "Sair";
-            RageQuitBtn.UseVisualStyleBackColor = true;
-            RageQuitBtn.Click += RageQuitBtn_Click;
             // 
             // PlayerOneRtb
             // 
             PlayerOneRtb.Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            PlayerOneRtb.Location = new Point(12, 178);
+            PlayerOneRtb.Location = new Point(14, 218);
             PlayerOneRtb.Name = "PlayerOneRtb";
-            PlayerOneRtb.Size = new Size(621, 225);
+            PlayerOneRtb.Size = new Size(710, 214);
             PlayerOneRtb.TabIndex = 1;
             PlayerOneRtb.Text = "";
             PlayerOneRtb.TextChanged += PlayerOneRtb_TextChanged;
             // 
             // TextToWriteLbl
             // 
-            TextToWriteLbl.AutoSize = true;
-            TextToWriteLbl.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            TextToWriteLbl.Location = new Point(12, 9);
+            TextToWriteLbl.AutoEllipsis = true;
+            TextToWriteLbl.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            TextToWriteLbl.Location = new Point(14, 9);
             TextToWriteLbl.Name = "TextToWriteLbl";
-            TextToWriteLbl.Size = new Size(62, 23);
+            TextToWriteLbl.Size = new Size(711, 207);
             TextToWriteLbl.TabIndex = 3;
-            TextToWriteLbl.Text = "label1";
+            TextToWriteLbl.Text = "Teste";
+            // 
+            // CountDown
+            // 
+            CountDown.Interval = 1000;
+            CountDown.Tick += CountDown_Tick;
+            // 
+            // TimerLbl
+            // 
+            TimerLbl.AutoSize = true;
+            TimerLbl.Font = new Font("Arial", 48F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            TimerLbl.Location = new Point(320, 74);
+            TimerLbl.Name = "TimerLbl";
+            TimerLbl.Size = new Size(82, 89);
+            TimerLbl.TabIndex = 4;
+            TimerLbl.Text = "3";
             // 
             // arena_interface
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(9F, 19F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(645, 450);
+            ClientSize = new Size(738, 444);
+            Controls.Add(TimerLbl);
             Controls.Add(TextToWriteLbl);
             Controls.Add(PlayerOneRtb);
-            Controls.Add(RageQuitBtn);
+            Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "arena_interface";
-            Text = "Arena";
+            ShowIcon = false;
+            ShowInTaskbar = false;
+            StartPosition = FormStartPosition.CenterScreen;
             FormClosing += arena_interface_FormClosing;
             Load += arena_interface_Load;
             ResumeLayout(false);
@@ -80,9 +91,9 @@
         }
 
         #endregion
-
-        private Button RageQuitBtn;
         private RichTextBox PlayerOneRtb;
         private Label TextToWriteLbl;
+        private System.Windows.Forms.Timer CountDown;
+        private Label TimerLbl;
     }
 }
